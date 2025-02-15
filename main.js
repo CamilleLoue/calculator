@@ -42,13 +42,8 @@ function operate(firstNum, secondNum, operator) {
 // user interractions with the calculator
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
-    console.log("display content", display.textContent);
-    if (display.textContent === "0") {
+    if (display.textContent === "0" || equalsClicked) {
       equalsClicked = false;
-      display.textContent = number.textContent;
-    } else if (equalsClicked) {
-      equalsClicked = false;
-      display.textContent = "";
       display.textContent = number.textContent;
     } else {
       display.textContent += number.textContent;
@@ -65,19 +60,12 @@ operators.forEach((operator) => {
         secondNumberSelected,
         operatorSelected
       );
-      console.log("first number selected", firstNumberSelected);
-      operatorSelected = operator.id;
-      operatorClicked = true;
-      console.log("operator selected", operatorSelected);
-      display.textContent = "";
     } else {
       firstNumberSelected = Number(display.textContent);
-      console.log("first number selected", firstNumberSelected);
-      operatorSelected = operator.id;
-      operatorClicked = true;
-      console.log("operator selected", operatorSelected);
-      display.textContent = "";
     }
+    operatorSelected = operator.id;
+    operatorClicked = true;
+    display.textContent = "";
   });
 });
 
