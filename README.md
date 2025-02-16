@@ -15,4 +15,4 @@ A simple calculator built with HTML, CSS, and JavaScript as part of The Odin Pro
 - JavaScript
 
 ## Live Demo
-[View Calculator](calculator-cl.vercel.app)
+[View Calculator](calculator-camilleloues-projects.vercel.app)
