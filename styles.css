@@ -1,25 +1,30 @@
 #calculator {
-  border: solid 0.2em;
-  border-color: red;
-  height: 340px;
-  width: 300px;
+  border: solid 4px;
+  border-color: #d00000;
+  border-radius: 5%;
+  padding: 4px;
+  background-color: black;
+  height: 380px;
+  width: 260px;
   display: flex;
   flex-direction: column;
+  font-size: large;
 }
 
 #display {
   flex: 1;
-  background-color: grey;
+  background-color: #bbbbbb;
+  margin: 4px;
+  padding: 4px;
+  padding-left: 10px;
+  padding-top: 8px;
+  font-size: x-large;
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
-  flex: 4;
-}
-
-div {
-  border: 1px solid #ddd;
+  flex: 6;
 }
 
 .operators {
@@ -28,7 +33,15 @@ div {
 }
 
 .operators div {
-  flex: auto;
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #474747;
+  margin: 2px;
+  border: 2px solid black;
 }
 
 .main-part {
@@ -37,13 +50,19 @@ div {
 }
 
 .left-panel {
-  flex: 3;
+  flex: 4;
   display: flex;
   flex-direction: column;
 }
 
 #equal {
   flex: 1;
+  text-align: center;
+  display: flex;
+  padding-left: 10px;
+  padding-top: 8px;
+  background-color: chocolate;
+  border: 4px solid black;
 }
 
 .numbers {
@@ -52,5 +71,15 @@ div {
 }
 
 .numbers div {
-  flex: auto;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  padding-left: 10px;
+  padding-top: 8px;
+  background-color: dimgray;
+  border: 4px solid black;
+}
+
+.highlighted {
+  background-color: darkgoldenrod;
 }

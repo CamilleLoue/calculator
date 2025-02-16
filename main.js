@@ -40,8 +40,22 @@ function operate(firstNum, secondNum, operator) {
 }
 
 // user interractions with the calculator
+function changeBackgroundColor(element, color, time) {
+  const originalColor = element.style.backgroundColor;
+  document.querySelectorAll(".numbers>div, .operators>div").forEach((el) => {
+    el.style.backgroundColor = "";
+  });
+
+  element.style.backgroundColor = color;
+  if (time) {
+    setTimeout(() => (element.style.backgroundColor = ""), time);
+  }
+}
+
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
+    changeBackgroundColor(number, "#a3a3a3", 100);
+
     if (display.textContent === "0" || equalsClicked) {
       equalsClicked = false;
       display.textContent = number.textContent;
@@ -53,6 +67,8 @@ numbers.forEach((number) => {
 
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
+    changeBackgroundColor(operator, "#a3a3a3");
+
     if (operatorClicked) {
       secondNumberSelected = Number(display.textContent);
       firstNumberSelected = operate(
@@ -70,11 +86,15 @@ operators.forEach((operator) => {
 });
 
 clear.addEventListener("click", () => {
+  changeBackgroundColor(clear, "#a3a3a3", 100);
+
   display.textContent = 0;
   operatorClicked = false;
 });
 
 equal.addEventListener("click", () => {
+  changeBackgroundColor(equal, "#a3a3a3", 100);
+
   secondNumberSelected = Number(display.textContent);
 
   const result = operate(
